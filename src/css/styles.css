@@ -1,18 +1,146 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+* {
+  box-sizing: border-box;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+body {
+  margin: 0;
+  color: #2e2f42;
+  background-color: #ffffff;
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  width: 100%;
+  padding: 36px 24px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.search-form input {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-form input:hover {
+  border-color: #000000;
+}
+
+.search-form input:focus {
+  border-color: #4e75ff;
+}
+
+.search-form button {
+  height: 40px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #4e75ff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #6c8cff;
+}
+
+.search-form button:disabled {
+  background-color: #cfcfcf;
+  cursor: not-allowed;
+}
+
+.gallery {
+  display: grid;
+  max-width: 1128px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border: 1px solid #808080;
+}
+
+.gallery-link {
+  display: block;
+  height: 200px;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.image-info p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.image-info b {
+  display: block;
+  font-size: 12px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  margin: 40px auto;
+  border: 5px solid #cfcfcf;
+  border-top-color: #4e75ff;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
